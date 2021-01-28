@@ -17,14 +17,14 @@ data={
     value:""
 }
 
-// function broadcastConnections() {
-//     let ids = app.locals.connections.map(c => c._connId);
-//     console.log(ids);
-//     app.locals.connections.forEach(c => {
-//         c.send(JSON.stringify({ type: 'ids', ids }));
-//         // console.log(JSON.stringify({type: 'ids'}))
-//     });
-// }
+function broadcastConnections() {
+    let ids = app.locals.connections.map(c => c._connId);
+    console.log(ids);
+    app.locals.connections.forEach(c => {
+        c.send(JSON.stringify({ type: 'ids', ids }));
+        // console.log(JSON.stringify({type: 'ids'}))
+    });
+}
 
 
 
