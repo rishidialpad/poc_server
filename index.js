@@ -38,7 +38,7 @@ wss.on('connection', (ws) => {
     app.locals.connections.push(ws);
     console.log(ws);
     // send the list of connection ids
-    // broadcastConnections();
+    broadcastConnections();
 
     ws.on('close', () => {
         let index = app.locals.connections.indexOf(ws);
