@@ -67,7 +67,7 @@ app.get('/getToken', (req, res) => {
     let token = jwt.sign({iss : "3074457353059286897"},"ZEBTVlpZvFXx9pIndaDkJMuAndN9yeWl");
     console.log(token);
     res.setHeader('Content-Type', 'application/json');
-    res.send({'token' : token});
+    res.send(JSON.stringify({'token' : token}));
 });
 
 server.listen(process.env.PORT || 8081, () => {
