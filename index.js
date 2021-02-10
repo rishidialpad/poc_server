@@ -3,10 +3,12 @@ var http = require('http');
 var ws = require('ws');
 var uuid = require('uuid');
 const jwt = require("jsonwebtoken");
+var cors = require('cors')
 
 const app = express();
 app.use(express.static(`${__dirname}/static`));
 app.locals.connections = [];
+app.use(cors())
 
 const server = http.createServer(app);
 const wss = new ws.Server({ server });
